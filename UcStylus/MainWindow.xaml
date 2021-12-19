@@ -10,7 +10,7 @@
         Background="#FFACACAC"
         Title="UcStylus" Foreground="{x:Null}">
     <Window.Resources>
-
+        <SolidColorBrush x:Key="bck_" Color="#19FFFFFF" ></SolidColorBrush>
         <Style x:Key="style_label" TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="10"/>
@@ -18,15 +18,22 @@
             <Setter Property="Padding" Value="0,5,0,0"/>
         </Style>
         <Style x:Key="style_border" TargetType="Border">
-            <Setter Property="Background" Value="#19FFFFFF"></Setter>
+            <Setter Property="Background" Value="{StaticResource bck_}"></Setter>
             <Setter Property="Margin" Value="4"></Setter>
             <Setter Property="CornerRadius" Value="5"></Setter>
             <Setter Property="Width" Value="40"></Setter>
             <Setter Property="Height" Value="40"></Setter>
-             
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#B2FFFFFF"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="grid_h" TargetType="Grid">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="False" >
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -34,7 +41,7 @@
     <Grid>
         <Grid x:Name="grid_m"/>
         <Grid>
-            
+
             <Grid>
                 <InkCanvas x:Name="PanelInkCanvas" Focusable="True" Background="{x:Null}">
                     <InkCanvas.DefaultDrawingAttributes>
@@ -43,7 +50,7 @@
                 </InkCanvas>
             </Grid>
         </Grid>
-       
+
         <Ellipse x:Name="EllipseCursor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="12" Height="12" Stroke="#FF0074FF" StrokeThickness="2" Visibility="Collapsed"></Ellipse>
         <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Content="UcStylus" FontSize="20" Padding="5" Foreground="White" Background="#33000000" Margin="10"></Label>
         <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#7FFFFFFF" Margin="10,0,0,10">
@@ -52,7 +59,7 @@
                 <controls:MultiLabel    x:Name="inf_drive" />
                 <controls:MultiLabel    x:Name="inf_keydown" />
             </StackPanel>
-           
+
         </Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" >
             <StackPanel Orientation="Horizontal">
@@ -62,8 +69,20 @@
                 <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="b_mosue_down_saveimage">
                     <Label Content="&#xE74E;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Border>
-                 
+
+                <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                    <Label Content="&#xE790;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
             </StackPanel>
+        </Grid>
+        <Grid x:Name="grid_dop"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="384" Height="200" Background="{StaticResource bck_}" Margin="0,818,0,0">
+            <Grid>
+               
+
+
+
+            </Grid>
         </Grid>
     </Grid>
 </Window>

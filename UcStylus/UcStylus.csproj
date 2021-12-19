@@ -76,6 +76,7 @@
     <Compile Include="Controls\MultiLabel.xaml.cs">
       <DependentUpon>MultiLabel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="lib\clib.cs" />
     <Compile Include="lib\Keyboard.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

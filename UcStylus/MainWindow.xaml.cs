@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using UcStylus.Controls;
+using UcStylus.lib;
 
 namespace UcStylus
 {
@@ -50,7 +51,7 @@ namespace UcStylus
             TimerTick timerTick = new TimerTick();
             timerTick.Tick += (s, e) =>
             {
-                if (Keyboard.IsKeyDown(Key.Escape))
+                if (System.Windows.Input.Keyboard.IsKeyDown(Key.Escape))
                     this.Close();
             };
             timerTick.Start();
@@ -196,6 +197,11 @@ namespace UcStylus
 
 
             
+        }
+
+        private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            grid_dop.SetVis(!grid_dop.GetVis());
         }
     }
 }

@@ -43,9 +43,9 @@ namespace UcStylus.lib
         /// <summary>
         /// Клавиша нажата?
         /// </summary>
-        public static bool IsKeyDown(Keys key)
+        public static bool IsKeyDown(System.Windows.Input.Key key)
         {
-            return KeyStates.Down == (GetKeyState(key) & KeyStates.Down);
+            return (int)KeyStates.Down == (GetKeyState((int)key) & (int)KeyStates.Down);
         }
 
         /// <summary>
@@ -55,58 +55,7 @@ namespace UcStylus.lib
         {
             return KeyStates.Toggled == (GetKeyState(key) & KeyStates.Toggled);
         }
-        /// <summary>
-        /// Список нажатых кнопок на клавиатуре.
-        /// </summary>
-        /// <returns></returns>
-        public static List<string> KeysDown()
-        {
-            List<string> listKeyDown = new List<string>();
-            Array KeyList = Enum.GetValues(typeof(Keys));
 
-            foreach (int ID_key in KeyList)
-            {
-                if (IsKeyDown((Keys)ID_key) == true)
-                {
-
-                    string keyDown = ((Keys)Enum.Parse(
-                        typeof(Keys),
-                        ((Keys)ID_key).ToString()
-                        )
-                    ).ToString();
-
-                    if (keyDown.Length > 1)
-                        keyDown = keyDown[0].ToString() == "D".ToString() ? keyDown[1].ToString() : keyDown;
-                    switch (keyDown)
-                    {
-                        case "ControlKey": break;
-                        case "Menu": break;
-                        case "ShiftKey": break;
-                        case "LButton":
-                            listKeyDown.Add("Mouse left");
-                            break;
-                        case "RButton":
-                            listKeyDown.Add("Mouse right");
-                            break;
-                        default:
-                            listKeyDown.Add(keyDown);
-                            break;
-                    }
-                    for (int i = 0; i < listKeyDown.Count; i++)
-                    {
-                        if (i == 0)
-                            continue;
-                        if (listKeyDown[i - 1].ToLower() == keyDown.ToLower())
-                        {
-                            listKeyDown.RemoveAt(i);
-                        }
-                    }
-                }
-
-            }
-
-            return listKeyDown;
-        }
 
     }
 }

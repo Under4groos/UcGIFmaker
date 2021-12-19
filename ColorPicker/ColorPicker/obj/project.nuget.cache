@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "2P/OQe+BFABOHCFpFfMuAWcHD3wzf59ILsRqCEL8rududfqPZNvs69vqjPkDizNCS9AQlfoFJfsOROGwIiJ+Kw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\UnderKo\\source\\repos\\UcGIFmaker\\ColorPicker\\ColorPicker\\ColorPicker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\UnderKo\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
