@@ -1,0 +1,69 @@
+﻿<Window x:Class="UcStylus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UcStylus" xmlns:controls="clr-namespace:UcStylus.Controls"
+        AllowsTransparency="True" 
+        WindowStyle="None" 
+        Height="1080" Width="1920"
+        Background="#FFACACAC"
+        Title="UcStylus" Foreground="{x:Null}">
+    <Window.Resources>
+
+        <Style x:Key="style_label" TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0,5,0,0"/>
+        </Style>
+        <Style x:Key="style_border" TargetType="Border">
+            <Setter Property="Background" Value="#19FFFFFF"></Setter>
+            <Setter Property="Margin" Value="4"></Setter>
+            <Setter Property="CornerRadius" Value="5"></Setter>
+            <Setter Property="Width" Value="40"></Setter>
+            <Setter Property="Height" Value="40"></Setter>
+             
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B2FFFFFF"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="grid_m"/>
+        <Grid>
+            
+            <Grid>
+                <InkCanvas x:Name="PanelInkCanvas" Focusable="True" Background="{x:Null}">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes x:Name="DrawingAttributes_" Width="10" Height="10"  Color="#FF51CFFF" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                </InkCanvas>
+            </Grid>
+        </Grid>
+       
+        <Ellipse x:Name="EllipseCursor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="12" Height="12" Stroke="#FF0074FF" StrokeThickness="2" Visibility="Collapsed"></Ellipse>
+        <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Content="UcStylus" FontSize="20" Padding="5" Foreground="White" Background="#33000000" Margin="10"></Label>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#7FFFFFFF" Margin="10,0,0,10">
+            <StackPanel Margin="0,0,40,0">
+                <controls:MultiLabel    x:Name="cursor_pos_" />
+                <controls:MultiLabel    x:Name="inf_drive" />
+                <controls:MultiLabel    x:Name="inf_keydown" />
+            </StackPanel>
+           
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" >
+            <StackPanel Orientation="Horizontal">
+                <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
+                    <Label Content="&#xE74D;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                </Border>
+                <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="b_mosue_down_saveimage">
+                    <Label Content="&#xE74E;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+                 
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

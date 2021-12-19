@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcGIFmaker", "UcGIFmaker\UcGIFmaker.csproj", "{D0B8BE69-7A08-4893-88E6-CCE97FB6095B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcStylus", "UcStylus\UcStylus.csproj", "{B218F5B2-45C6-42C8-9A6C-DC4B88FF14AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0B8BE69-7A08-4893-88E6-CCE97FB6095B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B8BE69-7A08-4893-88E6-CCE97FB6095B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B8BE69-7A08-4893-88E6-CCE97FB6095B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B8BE69-7A08-4893-88E6-CCE97FB6095B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B218F5B2-45C6-42C8-9A6C-DC4B88FF14AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B218F5B2-45C6-42C8-9A6C-DC4B88FF14AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B218F5B2-45C6-42C8-9A6C-DC4B88FF14AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B218F5B2-45C6-42C8-9A6C-DC4B88FF14AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8B62F4A-D65A-420D-87AD-C355141F12B3}
+	EndGlobalSection
+EndGlobal

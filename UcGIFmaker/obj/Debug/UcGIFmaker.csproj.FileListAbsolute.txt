@@ -1,0 +1,16 @@
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\bin\Debug\UcGIFmaker.exe.config
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\bin\Debug\UcGIFmaker.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\bin\Debug\UcGIFmaker.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.csproj.AssemblyReference.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\MainWindow.g.cs
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\App.g.cs
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker_MarkupCompile.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker_MarkupCompile.lref
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\MainWindow.baml
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.g.resources
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.Properties.Resources.resources
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.csproj.GenerateResource.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.csproj.CoreCompileInputs.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.csproj.SuggestedBindingRedirects.cache
