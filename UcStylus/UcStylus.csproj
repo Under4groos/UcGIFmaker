@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Setting.cs" />
     <Page Include="Controls\MultiLabel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +79,8 @@
     </Compile>
     <Compile Include="lib\clib.cs" />
     <Compile Include="lib\Keyboard.cs" />
+    <Compile Include="lib\SStylus.cs" />
+    <Compile Include="lib\StylusApi.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

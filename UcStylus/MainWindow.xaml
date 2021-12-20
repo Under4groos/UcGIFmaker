@@ -10,7 +10,7 @@
         Background="#FFACACAC"
         Title="UcStylus" Foreground="{x:Null}">
     <Window.Resources>
-        <SolidColorBrush x:Key="bck_" Color="#19FFFFFF" ></SolidColorBrush>
+        <SolidColorBrush x:Key="bck_" Color="#33FFFFFF" ></SolidColorBrush>
         <Style x:Key="style_label" TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="10"/>
@@ -45,44 +45,57 @@
             <Grid>
                 <InkCanvas x:Name="PanelInkCanvas" Focusable="True" Background="{x:Null}">
                     <InkCanvas.DefaultDrawingAttributes>
-                        <DrawingAttributes x:Name="DrawingAttributes_" Width="10" Height="10"  Color="#FF51CFFF" />
+                        <DrawingAttributes x:Name="DrawingAttributes_" Width="10" Height="10"  Color="#FF51CFFF"/>
                     </InkCanvas.DefaultDrawingAttributes>
+                    
                 </InkCanvas>
             </Grid>
         </Grid>
 
-        <Ellipse x:Name="EllipseCursor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="12" Height="12" Stroke="#FF0074FF" StrokeThickness="2" Visibility="Collapsed"></Ellipse>
-        <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Content="UcStylus" FontSize="20" Padding="5" Foreground="White" Background="#33000000" Margin="10"></Label>
-        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#7FFFFFFF" Margin="10,0,0,10">
+        <Ellipse x:Name="EllipseCursor"  Visibility="Collapsed"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="12" Height="12" Stroke="#FF0074FF" StrokeThickness="2" ></Ellipse>
+        <Grid  x:Name="grid_informations" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#7FFFFFFF" Margin="10,0,0,10">
             <StackPanel Margin="0,0,40,0">
-                <controls:MultiLabel    x:Name="cursor_pos_" />
-                <controls:MultiLabel    x:Name="inf_drive" />
-                <controls:MultiLabel    x:Name="inf_keydown" />
+                <controls:MultiLabel    x:Name="ActiveDevice" />
+                <controls:MultiLabel    x:Name="StylusButtonState" />
+                <controls:MultiLabel    x:Name="StylusCurPos" />
+                <controls:MultiLabel    x:Name="PenSize" />
             </StackPanel>
 
         </Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" >
             <StackPanel Orientation="Horizontal">
+                <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_undo">
+                    <Label Content="&#xE72C;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                </Border>
                 <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
-                    <Label Content="&#xE74D;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                    <Label Content="&#xE74D;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
                 </Border>
                 <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="b_mosue_down_saveimage">
-                    <Label Content="&#xE74E;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="&#xE74E;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Border>
 
                 <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
-                    <Label Content="&#xE790;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF4D4D4D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="&#xE790;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+                <Border Style="{StaticResource style_border}" HorizontalAlignment="Right" VerticalAlignment="Bottom" PreviewMouseLeftButtonDown="b_mosue_down_op_setting">
+                    <Label Content="&#xE713;" FontFamily="/UcStylus;component/font/#Segoe MDL2 Assets" Padding="0" FontSize="30" Foreground="#FF5900B7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Border>
 
             </StackPanel>
         </Grid>
-        <Grid x:Name="grid_dop"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="384" Height="200" Background="{StaticResource bck_}" Margin="0,818,0,0">
+        <Grid x:Name="grid_dop" Visibility="Hidden"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="384" Height="200" Background="{StaticResource bck_}" Margin="0,818,0,0">
             <Grid>
                
 
 
 
             </Grid>
+        </Grid>
+        <Grid x:Name="grid_setting" Visibility="Hidden" Margin="60" Background="#19FFFFFF">
+            <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Content="UcStylus" FontSize="16" Padding="2" Foreground="White" Background="#33000000" Margin="10"></Label>
+
+            <Label Content="Уть!" FontSize="72" Foreground="#33FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <Label Content="by UnderKo" FontSize="36" Foreground="#992B00FF" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Label>
         </Grid>
     </Grid>
 </Window>

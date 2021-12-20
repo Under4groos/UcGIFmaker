@@ -2,7 +2,7 @@
 using FullUcLib.func;
 using Microsoft.Win32;
 using System.Windows;
-
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -16,20 +16,9 @@ namespace UcStylus
     /// </summary>
     public partial class MainWindow : Window
     {
-        Color bu_ = Color.FromRgb(0, 116, 255);
-        Color bu_2 = Color.FromRgb(255, 0, 0);
-        Key cur_key_down = 0;
-        double PaintSize
-        {
-            get
-            {
-                return (DrawingAttributes_.Width + DrawingAttributes_.Height) / 2;
-            }
-            set
-            {
-                DrawingAttributes_.Width = DrawingAttributes_.Height = value <= 0.01 ? 0.01 : value;
-            }
-        }
+         
+
+     
         public Size SizeScreen
         {
             get
@@ -37,103 +26,108 @@ namespace UcStylus
                 return new Size(SystemParameters.PrimaryScreenWidth, SystemParameters.PrimaryScreenHeight);
             }
         }
-         
+        void SetCustomCursor( Point p , double s , Color c )
+        {
+            EllipseCursor.Height = EllipseCursor.Width = s;
+           
+
+            EllipseCursor.Stroke = new SolidColorBrush(c);
+            EllipseCursor.Margin = new Thickness(
+                p.X - EllipseCursor.Width * 2,
+                p.Y - EllipseCursor.Height * 2 ,
+                0.1, 0.1
+                );
+        }
         public MainWindow()
         {
             InitializeComponent();
+            Setting.OpenSetting();
+            grid_setting.SetVis(false);
 
             this.Left = 0;
             this.Top = 0;
             this.Width = SizeScreen.Width;
             this.Height = SizeScreen.Height;
-            int tis = 0;
+
+            StylusApi stylusApi = new StylusApi(PanelInkCanvas , DrawingAttributes_);
+             
+
 
             TimerTick timerTick = new TimerTick();
             timerTick.Tick += (s, e) =>
             {
                 if (System.Windows.Input.Keyboard.IsKeyDown(Key.Escape))
+                {
+                    Setting.SaveSetting();
                     this.Close();
+                }
+                    
+                switch (stylusApi.ActiveDevice)
+                {
+                    case DeviceType.Mouse:
+
+                        StylusButtonState.SetText(0, $"Mouse state: ");
+                        StylusButtonState.SetText(1, $"<{stylusApi.MouseLeftButtonDown}>");
+
+                        StylusCurPos.SetText(
+                            0,
+                            $"Cursor pos: ");
+                        StylusCurPos.SetText(
+                            1,
+                            $" {stylusApi.CursorPosition }");
+
+
+                        break;
+                    case DeviceType.Stylus:
+                        StylusButtonState.SetText(0, "Stylus state: ");
+                       
+
+                        StylusButtonState.SetText(1, $" <{stylusApi.StylusButtonState}>");
+
+                        StylusCurPos.SetText(
+                            1,
+                            stylusApi.StylusButtonState ? $" <{stylusApi.StylesPosition}>" : $" Air <{stylusApi.StylusInAirPosition}>");
+
+
+                        //SetCustomCursor(stylusApi.StylesPosition, stylusApi.pen.size, Color.FromRgb(0, 116, 255));
+                        
+
+                        break;
+                    default:
+                        break;
+                }
+                ActiveDevice.SetText(1, $" <{stylusApi.ActiveDevice}>");
+
+                PenSize.SetText(1, $" <{stylusApi.pen.size}>");
+
+
+
+                
+
             };
             timerTick.Start();
-             
 
-            PanelInkCanvas.StylusMove += (o, e) =>
-            {
-
-                Point p = e.GetPosition(this);
-                EllipseCursor.Stroke = new SolidColorBrush(bu_);
-                EllipseCursor.Margin = new Thickness(
-                    p.X - EllipseCursor.Width / 2,
-                    p.Y - EllipseCursor.Height / 2,
-                    0.1, 0.1
-                    );
-
-
-            };
-            PanelInkCanvas.MouseMove += (o, e) =>
-            {
-                tis++;
-                if (tis < 50) return;
-
-
-
-                Point p = e.GetPosition(PanelInkCanvas);
-                cursor_pos_.SetText(0, "Cursor: ");
-                cursor_pos_.SetText(1, $" <{p.X},{p.Y}>");
-
-
-
-                tis = 0;
-            };
-            PanelInkCanvas.KeyDown += (o, e) =>
-            {
-                cur_key_down = e.Key;
-                inf_keydown.SetText(1, $" <{cur_key_down}> ");
-
-                if (e.Key == Key.Escape)
-                    this.Close();
-            };
-            PanelInkCanvas.KeyUp += (o, e) =>
-            {
-                inf_keydown.SetText(1, $" <nil> ");
-            };
-
-            PanelInkCanvas.MouseWheel += (o, e) =>
-            {
-                if (cur_key_down.ToString().ToLower() == "system")
-                    PaintSize -= e.Delta * 0.01;
-            };
-            PanelInkCanvas.PreviewMouseLeftButtonDown += (o, e) =>
-            {
-                inf_drive.SetText(1, $" <Mosue>");
-            };
-            PanelInkCanvas.StylusInAirMove += (o, e) =>
-            {
-                Point p = e.GetPosition(this);
-                EllipseCursor.Stroke = new SolidColorBrush(bu_2);
-                EllipseCursor.Margin = new Thickness(
-                    p.X - EllipseCursor.Width / 2,
-                    p.Y - EllipseCursor.Height / 2,
-                    0.1, 0.1
-                    );
-            };
-
+         
 
 
             this.Loaded += (o, e) =>
             {
                 DrawC();
-                cursor_pos_.add("Cursor: ", Color.FromRgb(77, 77, 77), 15);
-                cursor_pos_.add($" <0,0>", Color.FromRgb(0, 0, 0), 15);
+                
+                 
+                ActiveDevice.add("Device: : ", Color.FromRgb(77, 77, 77), 15);
+                ActiveDevice.add(" ", Color.FromRgb(0, 0, 0), 15);
 
-                inf_drive.add("Device: ", Color.FromRgb(77, 77, 77), 15);
-                inf_drive.add(" <nil>", Color.FromRgb(0, 0, 0), 15);
+                StylusButtonState.add("ButtonState: ", Color.FromRgb(77, 77, 77), 15);
+                StylusButtonState.add(" <nil>", Color.FromRgb(0, 0, 0), 15);
 
-                inf_keydown.add("Key: ", Color.FromRgb(77, 77, 77), 15);
-                inf_keydown.add(" <nil>", Color.FromRgb(0, 0, 0), 15);
+                StylusCurPos.add("Stylus pos: ", Color.FromRgb(77, 77, 77), 15);
+                StylusCurPos.add("(0,0)", Color.FromRgb(0, 0, 0), 15);
+
+                PenSize.add("Pen size: ", Color.FromRgb(77, 77, 77), 15);
+                PenSize.add("0", Color.FromRgb(0, 0, 0), 15);
             };
         }
-
         void DrawC()
         {
             grid_m.Children.Clear();
@@ -162,7 +156,7 @@ namespace UcStylus
 
                     grid_m.Children.Add(
                         new cborder(
-                            new Size(5, 5),
+                            new Size(4,4),
                             new Point(size_w / 4 + (x * size_w), size_w / 4 + (y * size_h)),
                             Color.FromArgb(100, 255, 255, 255)
                             )
@@ -170,14 +164,12 @@ namespace UcStylus
                 }
             }
         }
-
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // clear PanelInkCanvas
             PanelInkCanvas.Children.Clear();
             PanelInkCanvas.Strokes.Clear();
         }
-
         private void b_mosue_down_saveimage(object sender, MouseButtonEventArgs e)
         {
             RenderTargetBitmap renderTargetBitmap = PanelInkCanvas.RTBitmap((int)PanelInkCanvas.ActualWidth, (int)PanelInkCanvas.ActualHeight);
@@ -185,7 +177,7 @@ namespace UcStylus
         
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            saveFileDialog1.Filter = "image files (*.png)|*.png|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "image files (*.png)|*.png";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
@@ -198,10 +190,24 @@ namespace UcStylus
 
             
         }
-
         private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             grid_dop.SetVis(!grid_dop.GetVis());
+        }
+
+        private void b_mosue_down_op_setting(object sender, MouseButtonEventArgs e)
+        {
+
+            grid_setting.SetVis(!grid_setting.GetVis());
+
+            grid_informations.SetVis(!grid_setting.GetVis());
+        }
+
+        private void Border_PreviewMouseLeftButtonDown_undo(object sender, MouseButtonEventArgs e)
+        {
+            //PanelInkCanvas.Strokes.Count
+            if(PanelInkCanvas.Strokes.Count != 0)
+                PanelInkCanvas.Strokes.RemoveAt(PanelInkCanvas.Strokes.Count - 1);
         }
     }
 }

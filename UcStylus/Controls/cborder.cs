@@ -20,7 +20,7 @@ namespace UcStylus.Controls
             this.Background = new SolidColorBrush(c);
             this.HorizontalAlignment = HorizontalAlignment.Left;
             this.VerticalAlignment = VerticalAlignment.Top;
-            
+            this.CornerRadius = new CornerRadius((size.Width + size.Height) / 2);
         }
     }
 }
