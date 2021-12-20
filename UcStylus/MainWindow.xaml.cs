@@ -61,7 +61,12 @@ namespace UcStylus
                     Setting.SaveSetting();
                     this.Close();
                 }
-                    
+                if(System.Windows.Input.Keyboard.IsKeyDown(Key.LeftCtrl) && stylusApi.CurKeyDown == Key.Z)
+                {
+                    if (PanelInkCanvas.Strokes.Count != 0)
+                        PanelInkCanvas.Strokes.RemoveAt(PanelInkCanvas.Strokes.Count - 1);
+                    stylusApi.CurKeyDown = Key.F24;
+                }
                 switch (stylusApi.ActiveDevice)
                 {
                     case DeviceType.Mouse:
@@ -205,7 +210,7 @@ namespace UcStylus
 
         private void Border_PreviewMouseLeftButtonDown_undo(object sender, MouseButtonEventArgs e)
         {
-            //PanelInkCanvas.Strokes.Count
+            
             if(PanelInkCanvas.Strokes.Count != 0)
                 PanelInkCanvas.Strokes.RemoveAt(PanelInkCanvas.Strokes.Count - 1);
         }
