@@ -1,0 +1,11 @@
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\bin\Debug\TestGifCreator.exe.config
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\bin\Debug\TestGifCreator.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\bin\Debug\TestGifCreator.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\bin\Debug\gflib.dll
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\bin\Debug\gflib.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.csproj.AssemblyReference.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.csproj.SuggestedBindingRedirects.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.csproj.CoreCompileInputs.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.csproj.CopyComplete
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestGifCreator\obj\Debug\TestGifCreator.pdb

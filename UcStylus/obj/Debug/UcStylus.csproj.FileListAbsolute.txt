@@ -19,3 +19,5 @@ C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\obj\Debug\UcStylus.csproj.Core
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\obj\Debug\UcStylus.csproj.CopyComplete
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\obj\Debug\UcStylus.exe
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\obj\Debug\UcStylus.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\bin\Debug\gflib.dll
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcStylus\bin\Debug\gflib.pdb

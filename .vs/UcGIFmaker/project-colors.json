@@ -10,7 +10,22 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "79c5108b-63a1-472b-94df-6869c60dbe56": {
+      "ProjectGuid": "79c5108b-63a1-472b-94df-6869c60dbe56",
+      "DisplayName": "gflib",
+      "ColorIndex": 1
+    },
+    "ff9b8559-eb24-4517-b31a-94d4da85d3e2": {
+      "ProjectGuid": "ff9b8559-eb24-4517-b31a-94d4da85d3e2",
+      "DisplayName": "TestGifCreator",
+      "ColorIndex": 2
+    },
+    "1822493b-2e83-4323-a5bd-86e8379f9e46": {
+      "ProjectGuid": "1822493b-2e83-4323-a5bd-86e8379f9e46",
+      "DisplayName": "TestRenameFiles",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }

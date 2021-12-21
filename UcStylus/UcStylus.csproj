@@ -60,7 +60,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Setting.cs" />
     <Page Include="Controls\MultiLabel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,10 +76,6 @@
     <Compile Include="Controls\MultiLabel.xaml.cs">
       <DependentUpon>MultiLabel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="lib\clib.cs" />
-    <Compile Include="lib\Keyboard.cs" />
-    <Compile Include="lib\SStylus.cs" />
-    <Compile Include="lib\StylusApi.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -112,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gflib\gflib.csproj">
+      <Project>{79c5108b-63a1-472b-94df-6869c60dbe56}</Project>
+      <Name>gflib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
