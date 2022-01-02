@@ -8,3 +8,4 @@ C:\Users\UnderKo\source\repos\UcGIFmaker\TestRenameFiles\obj\Debug\TestRenameFil
 C:\Users\UnderKo\source\repos\UcGIFmaker\TestRenameFiles\obj\Debug\TestRenameFiles.csproj.CopyComplete
 C:\Users\UnderKo\source\repos\UcGIFmaker\TestRenameFiles\obj\Debug\TestRenameFiles.exe
 C:\Users\UnderKo\source\repos\UcGIFmaker\TestRenameFiles\obj\Debug\TestRenameFiles.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\TestRenameFiles\obj\Debug\TestRenameFiles.csproj.AssemblyReference.cache

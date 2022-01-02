@@ -1,0 +1,8 @@
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.csproj.AssemblyReference.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.csproj.SuggestedBindingRedirects.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.csproj.CoreCompileInputs.cache
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\UcGifConverter.exe.config
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\UcGifConverter.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\UcGifConverter.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.exe
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.pdb
