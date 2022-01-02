@@ -6,16 +6,20 @@ namespace UcGifConverter.Lib
 {
     public class GifFrames
     {
-        public  string PATH
+        public string PATH
         {
-            get;private set;
+            get; private set;
         }
-        private Image[] IMAGES;
+        public Image[] IMAGES;
         private Image image_gif;
         public int Count
         {
-            get;set;
+            get; set;
         }
+        public ImageFormat imageFormat
+        {
+            get; set;
+        } = ImageFormat.Png;
         public GifFrames(string path)
         {
             if (!File.Exists(path)) return;
@@ -30,9 +34,25 @@ namespace UcGifConverter.Lib
                 IMAGES[i] = ((Image)image_gif.Clone());
             }
         }
-        public Image GetFrame( int id )
+
+        public void SaveImages(string path  )
         {
-            if(Count > 0 && id <= Count)
+            if (!Directory.Exists(path)) return;
+            int count_fr_ = 0;
+            foreach (System.Drawing.Image item in this.IMAGES)
+            {
+                item.Save(
+                    Path.Combine(
+                        path,
+                        $"image_{count_fr_}.{imageFormat.ToString().ToLower()}"
+                    ),
+                    imageFormat);
+                count_fr_++;
+            }
+        }
+        public Image GetFrame(int id)
+        {
+            if (Count > 0 && id <= Count)
                 return IMAGES[id];
             return null;
         }

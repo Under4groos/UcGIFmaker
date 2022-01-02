@@ -45,20 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\EnumConverter.cs" />
-    <Compile Include="Lib\AnimatedGif.cs" />
-    <Compile Include="Lib\AnimatedGifCreator.cs" />
     <Compile Include="Lib\Log.cs" />
-    <Compile Include="Lib\Extensions.cs" />
-    <Compile Include="Lib\GifClass.cs" />
     <Compile Include="Lib\GifFrames.cs" />
-    <Compile Include="Lib\GifProperties.cs" />
-    <Compile Include="Lib\GrayscaleQuantizer.cs" />
-    <Compile Include="Lib\Helper.cs" />
-    <Compile Include="Lib\OctreeQuantizer.cs" />
-    <Compile Include="Lib\PaletteQuantizer.cs" />
-    <Compile Include="Lib\Quantizer.cs" />
     <Compile Include="Lib\README.cs" />
-    <Compile Include="Lib\VideoEncoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

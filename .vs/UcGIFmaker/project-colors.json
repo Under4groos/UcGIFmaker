@@ -25,7 +25,12 @@
       "ProjectGuid": "1822493b-2e83-4323-a5bd-86e8379f9e46",
       "DisplayName": "TestRenameFiles",
       "ColorIndex": 3
+    },
+    "3bf7a82d-f3f0-4450-89fb-84f5442f350d": {
+      "ProjectGuid": "3bf7a82d-f3f0-4450-89fb-84f5442f350d",
+      "DisplayName": "UcGifConverter",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

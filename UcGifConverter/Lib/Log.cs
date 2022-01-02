@@ -27,9 +27,9 @@ namespace UcGifConverter.Lib
         {
             get; set;
         } = false;
-        public static void add(string str_ad, LogMode logMode = LogMode.ALL)
+        public static void add(object str_ad, LogMode logMode = LogMode.ALL_2)
         {
-            add(new string[] { str_ad }, logMode);
+            add(new string[] { str_ad.ToString() }, logMode);
         }
         public static void add(string[] str_ad, LogMode logMode = LogMode.ALL)
         {
