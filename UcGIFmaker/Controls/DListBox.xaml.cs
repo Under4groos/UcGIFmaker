@@ -21,17 +21,14 @@ namespace UcGIFmaker.Controls
     /// </summary>
     public partial class DListBox : UserControl
     {
-        public ScrollViewer ScrollViewer
-        { 
-            get
-            { 
-                return  this.GetTemplateChild("ScrollViewer") as ScrollViewer; 
-            } 
-        }
-        public int Add(FrameworkElement frameworkElement)
+        public int Count
         {
-            return ListBox_it.Items.Add(frameworkElement);
+            get
+            {
+                return StackPanel_items.Children.Count;
+            }
         }
+   
         public double SpeedScroling
         {
             get; set;
@@ -51,25 +48,20 @@ namespace UcGIFmaker.Controls
                 
             };
         }
+        public int Add(FrameworkElement item) => StackPanel_items.Children.Add(item);
+
+
         public void ResizeItemsHeight()
         {
-            foreach (FrameworkElement item in ListBox_it.Items)
+            foreach (FrameworkElement item in StackPanel_items.Children)
             {
                 item.SetSize(this.Height, this.Height);
             }
         }
         public FrameworkElement GetItemId( int id )
         {
-            return (FrameworkElement)ListBox_it.Items[id];
+            return (FrameworkElement)StackPanel_items.Children[id];
         }
-
-        private void UserControl_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            //e.Delta
-            //ListBox_it.ScrollToVerticalOffset(ListBox_it.VerticalOffset - 3)
-            //ListBox_it.sc
-            //Console.WriteLine(e.Delta);
-            //ScrollViewer.ScrollToHorizontalOffset( - e.Delta);
-        }
+ 
     }
 }

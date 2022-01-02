@@ -30,7 +30,12 @@
       "ProjectGuid": "3bf7a82d-f3f0-4450-89fb-84f5442f350d",
       "DisplayName": "UcGifConverter",
       "ColorIndex": 4
+    },
+    "d0b8be69-7a08-4893-88e6-cce97fb6095b": {
+      "ProjectGuid": "d0b8be69-7a08-4893-88e6-cce97fb6095b",
+      "DisplayName": "UcGIFmaker",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

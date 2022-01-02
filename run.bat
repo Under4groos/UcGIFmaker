@@ -1,7 +1,7 @@
 
 git init
 git add .
-git commit -m "Уть нака!"
+git commit -m "T"
 git branch -M main
 git remote add origin https://github.com/Under4groos/UcGIFmaker.git
 git push -u origin main

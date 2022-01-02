@@ -40,8 +40,11 @@ namespace UcGIFmaker
                 maint_Controls_grid.Margin = new Thickness(5);
             });
             new WBControl(this, closeim, ACTIONS.CLOSE);
-
-
+            D_ListBox.SpeedScroling = 1;
+            for (int i = 0; i < 20; i++)
+                for (int d = 0; d < 20; d++)
+                    D_ListBox.Add(new Border() { Width = 10,Height = 100,Background = new SolidColorBrush(Color.FromRgb((byte)(d + i), (byte)(d + i), (byte)(d + i))) });
+             
 
         }
     }

@@ -24,14 +24,8 @@
     <Grid >
 
         <ScrollViewer x:Name="eScrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
-            <StackPanel Orientation="Horizontal">
-                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#FFB94C4C" Width="150" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#1940B500" Width="150" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
-                <Border Background="#19FFFFFF" Width="150" Height="25" Margin="0,0,4,0"></Border>
+            <StackPanel x:Name="StackPanel_items" Orientation="Horizontal">
+                 
             </StackPanel>
         </ScrollViewer>
     </Grid>
