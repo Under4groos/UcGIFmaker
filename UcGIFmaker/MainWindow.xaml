@@ -20,16 +20,28 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="style_border_2" TargetType="Border">
-            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Background" Value="#FF5F5F5F"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="False">
-                    <Setter Property="Background" Value="{x:Null}"></Setter>
+                    <Setter Property="Background" Value="#FF3C3C3C"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="style_label" TargetType="Label">
+            <!--HorizontalContentAlignment="Center" 
+                                         VerticalContentAlignment="Center" Foreground="White" 
+                                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                         Padding="0,0,0,0" Margin="5,0,5,0"-->
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Margin" Value="5,0,5,0"></Setter>
+            <Setter Property="Padding" Value="0,0,0,0"></Setter>
+        </Style>
     </Window.Resources>
     <Controls:DGrid  BorderThickness="1" BorderBrush="#FF4C4C4C" Background="#FF2F2F2F">
-        <Controls:DGrid VerticalAlignment="Top">
+        <Controls:DGrid VerticalAlignment="Top" Margin="1,1,1,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Border x:Name="minim" Style="{StaticResource style_border_1}" Width="35" Height="25" VerticalAlignment="Stretch">
                     <Controls:DFIcon IconID="&#xE738;" FontSize="11" 
@@ -56,17 +68,24 @@
 
                 </Border>
             </StackPanel>
-            <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14" Content="{Binding Title, ElementName=window}" Foreground="White"></Label>
+            <Label Style="{StaticResource style_label}"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14" Content="{Binding Title, ElementName=window}" Foreground="White"></Label>
         </Controls:DGrid>
         <Controls:DGrid VerticalAlignment="Top" Margin="0,25,0,0" >
-            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-                <Border Style="{StaticResource style_border_2}" Width="35" Height="25" VerticalAlignment="Stretch">
-                    <Label Content="Project" FontSize="11" 
-                                         HorizontalContentAlignment="Center" 
-                                         VerticalContentAlignment="Center" Foreground="#FF999999" 
-                                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                                         Padding="0,0,0,0"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="5,0,0,0">
+                <Border Style="{StaticResource style_border_2}" Height="25" VerticalAlignment="Stretch">
+                    <Label Content="File" FontSize="14" Style="{StaticResource style_label}"/>
 
+                </Border>
+                <Border Style="{StaticResource style_border_2}" Height="25" VerticalAlignment="Stretch">
+                    <Label Content="Project" FontSize="14" Style="{StaticResource style_label}"/>
+                </Border>
+                <Border Style="{StaticResource style_border_2}" Height="25" VerticalAlignment="Stretch">
+                    <Label Content="Кушать" FontSize="14" Style="{StaticResource style_label}"/>
+                </Border>
+
+
+                <Border Style="{StaticResource style_border_2}" Height="25" VerticalAlignment="Stretch">
+                    <Label Content="Хотеть" FontSize="14" Style="{StaticResource style_label}"/>
                 </Border>
             </StackPanel>
         </Controls:DGrid>
