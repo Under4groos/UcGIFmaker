@@ -40,7 +40,7 @@
             <Setter Property="Padding" Value="0,0,0,0"></Setter>
         </Style>
     </Window.Resources>
-    <Controls:DGrid  BorderThickness="1" BorderBrush="#FF4C4C4C" Background="#FF2F2F2F">
+    <Controls:DGrid  x:Name="maint_Controls_grid" BorderThickness="1" BorderBrush="#FF4C4C4C" Background="#FF2F2F2F">
         <Controls:DGrid VerticalAlignment="Top" Margin="1,1,1,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Border x:Name="minim" Style="{StaticResource style_border_1}" Width="35" Height="25" VerticalAlignment="Stretch">
@@ -88,6 +88,12 @@
                     <Label Content="Хотеть" FontSize="14" Style="{StaticResource style_label}"/>
                 </Border>
             </StackPanel>
+        </Controls:DGrid>
+        <!--main-->
+        <Controls:DGrid Margin="0,55,0,0">
+            <Controls:DGrid x:Name="dGrid" Background="#19FFFFFF"  VerticalAlignment="Top" Height="152" Margin="0,593,0,0" >
+                
+            </Controls:DGrid>
         </Controls:DGrid>
         <Border Width="10" Height="10" x:Name="border_resize" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#02000000"></Border>
     </Controls:DGrid>

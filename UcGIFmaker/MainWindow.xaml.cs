@@ -35,7 +35,10 @@ namespace UcGIFmaker
                 LeftDown = 35 * 3,
             };
             new WBControl(this, minim, ACTIONS.SIZE_min);
-            new WBControl(this, maxim, ACTIONS.SIZE_max);
+            new WBControl(this, maxim, ACTIONS.SIZE_max , () =>
+            {
+                maint_Controls_grid.Margin = new Thickness(5);
+            });
             new WBControl(this, closeim, ACTIONS.CLOSE);
 
 

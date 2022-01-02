@@ -16,7 +16,7 @@ namespace UcAutoClicker.Lib
     }
     public class WBControl
     {
-        public WBControl(Window wind, UIElement uIElement, ACTIONS action)
+        public WBControl(Window wind, UIElement uIElement, ACTIONS action , Action action_mosue = null)
         {
 
             switch (action)
@@ -24,7 +24,8 @@ namespace UcAutoClicker.Lib
                 case ACTIONS.CLOSE:
                     uIElement.PreviewMouseLeftButtonDown += (o, e) =>
                     {
-
+                        if (action_mosue != null)
+                            action_mosue();
                         wind.Close();
                     };
                     break;
@@ -50,6 +51,8 @@ namespace UcAutoClicker.Lib
                             default:
                                 break;
                         }
+                        if (action_mosue != null)
+                            action_mosue();
                     };
                     break;
 
@@ -69,6 +72,8 @@ namespace UcAutoClicker.Lib
                             default:
                                 break;
                         }
+                        if (action_mosue != null)
+                            action_mosue();
                     };
                     break;
                 default:

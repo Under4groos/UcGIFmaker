@@ -22,3 +22,5 @@ C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\bin\Debug\gflib.pdb
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\UcGIFmaker.csproj.CopyComplete
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\WindowControls\StartWindow.g.cs
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\WindowControls\StartWindow.baml
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\Controls\DListBox.g.cs
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGIFmaker\obj\Debug\Controls\DListBox.baml
