@@ -59,11 +59,18 @@
     <Compile Include="AnimatedGif\Quantizer.cs" />
     <Compile Include="AnimatedGif\VideoEncoder.cs" />
     <Compile Include="lib\clib.cs" />
+    <Compile Include="lib\cur_pos.cs" />
     <Compile Include="lib\gif_cl_dire.cs" />
     <Compile Include="lib\Keyboard.cs" />
     <Compile Include="lib\SFiles.cs" />
     <Compile Include="lib\SStylus.cs" />
     <Compile Include="lib\StylusApi.cs" />
+    <Compile Include="lib\Table.cs" />
+    <Compile Include="lib\TimerTick.cs" />
+    <Compile Include="lib\WBControl.cs" />
+    <Compile Include="lib\WinApi.cs" />
+    <Compile Include="lib\WinDragMove.cs" />
+    <Compile Include="lib\WinResize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setting.cs" />
   </ItemGroup>

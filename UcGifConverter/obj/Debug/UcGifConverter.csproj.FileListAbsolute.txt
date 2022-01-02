@@ -6,3 +6,6 @@ C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\UcGifConverter
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\UcGifConverter.pdb
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.exe
 C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\gflib.dll
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\bin\Debug\gflib.pdb
+C:\Users\UnderKo\source\repos\UcGIFmaker\UcGifConverter\obj\Debug\UcGifConverter.csproj.CopyComplete

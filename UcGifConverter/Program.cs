@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AnimatedGif;
+using gflib.lib;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using UcGifConverter.Lib;
 
@@ -59,11 +62,13 @@ namespace UcGifConverter
         static void Main(string[] args_)
         {
 
-            structCon.EnumType = Enum.EnumConverter.EnumType.images_to_gif;
+             
             string[] start_text = new string[]
                 {
                     "\"gi\" - gif to images",
                     "\"ig\" - images to gif",
+                    "\"exit\" ",
+                     
                     "\"help\" - help!"
                 };
             Log.add(start_text, Log.LogMode.ALL_2);
@@ -87,8 +92,6 @@ namespace UcGifConverter
                         }
                         SetPath_gif(); 
                         #endregion
-
-
                         #region Saved Image Directory
                         Log.add("Saved Image Directory :");
                         string directory_save_images = "";
@@ -101,16 +104,61 @@ namespace UcGifConverter
                         #endregion
 
                         GifFrames gifFrames = new GifFrames(path_gif);
-                        //Log.add(gifFrames.Count);
-
                         gifFrames.SaveImages(directory_save_images);
 
                         break;
                     case "ig":
-                        structCon.EnumType = Enum.EnumConverter.EnumType.gif_to_images;
-                        Log.add(structCon.ToString(), Log.LogMode.ALL_2);
-
-
+                        #region Region ig
+                        Log.add("Путь к новому файлу \"gifimages.gif\":");
+                        string new_gif_file = Console.ReadLine().Replace("\"", "");
+                        Log.add("Директория с изображениями:");
+                        string Image_folder = "";
+                        void folder_()
+                        {
+                            Image_folder = Console.ReadLine().Replace("\"", "");
+                            if (!Directory.Exists(Image_folder)) folder_();
+                        }
+                        folder_();
+                        List<string> files_image_ = new List<string>();
+                        foreach (var item in Directory.GetFiles(Image_folder))
+                        {
+                            if (Table.HasValue(new string[] { ".png", ".jpeg", ".jpg" }, new FileInfo(item).Extension))
+                            {
+                                files_image_.Add(item);
+                                Log.add($"add: {item} , count: {files_image_.Count}");
+                            }
+                        }
+                        Log.add($"Folder: {new_gif_file}");
+                        using (var gif = AnimatedGif.AnimatedGif.Create(new_gif_file, 33))
+                        {
+                            foreach (string file_image in files_image_)
+                            {
+                                if (File.Exists(file_image))
+                                    gif.AddFrame(System.Drawing.Image.FromFile(file_image), 100, quality: GifQuality.Bit8);
+                            }
+                        } 
+                        #endregion
+                        break;
+                    case "g_frame":
+                        SetPath_gif();
+                        GifFrames gf = new GifFrames(path_gif);
+                        bool _ret_ = true;
+                        while (_ret_)
+                        {
+                            switch (Console.ReadLine().Replace("\"", ""))
+                            {
+                                case "get_frames":
+                                    Log.add($"-> Frames: {gf.Count}");
+                                    
+                                    break;
+                                case "return":
+                                    _ret_ = false;
+                                    break;
+                                default:
+                                    break;
+            
+                            }
+                        }
 
                         break;
                     case "help":
