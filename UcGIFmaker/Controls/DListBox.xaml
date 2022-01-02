@@ -4,12 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UcGIFmaker.Controls"
+              
+             Foreground="{x:Null}" Background="#02000000"
              >
     <UserControl.Resources>
         <!--mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"-->
         <Style x:Key="style_label" TargetType="Label">
-           
+
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
             <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
@@ -17,16 +19,20 @@
             <Setter Property="Margin" Value="5,0,5,0"></Setter>
             <Setter Property="Padding" Value="0,0,0,0"></Setter>
         </Style>
+        <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
     </UserControl.Resources>
-    <Grid>
-        <ListBox x:Name="ListBox_it" Background="{x:Null}">
-            <Border Background="#19FFFFFF" Width="25" Height="25" Margin="0,0,4,0"></Border>
-            <Border Background="#19FFFFFF" Width="25" Height="25" Margin="0,0,4,0"></Border>
-             <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+    <Grid >
+
+        <ScrollViewer x:Name="eScrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
+            <StackPanel Orientation="Horizontal">
+                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#FFB94C4C" Width="150" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#1940B500" Width="150" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#19FFFFFF" Width="50" Height="25" Margin="0,0,4,0"></Border>
+                <Border Background="#19FFFFFF" Width="150" Height="25" Margin="0,0,4,0"></Border>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

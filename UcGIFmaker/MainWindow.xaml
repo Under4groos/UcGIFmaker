@@ -91,8 +91,9 @@
         </Controls:DGrid>
         <!--main-->
         <Controls:DGrid Margin="0,55,0,0">
-            <Controls:DGrid x:Name="dGrid" Background="#19FFFFFF"  VerticalAlignment="Top" Height="152" Margin="0,593,0,0" >
-                
+            
+            <Controls:DGrid x:Name="dGrid" Background="#19FFFFFF"  VerticalAlignment="Bottom"  >
+                <Controls:DListBox></Controls:DListBox>
             </Controls:DGrid>
         </Controls:DGrid>
         <Border Width="10" Height="10" x:Name="border_resize" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#02000000"></Border>

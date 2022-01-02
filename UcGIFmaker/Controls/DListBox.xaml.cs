@@ -21,13 +21,35 @@ namespace UcGIFmaker.Controls
     /// </summary>
     public partial class DListBox : UserControl
     {
+        public ScrollViewer ScrollViewer
+        { 
+            get
+            { 
+                return  this.GetTemplateChild("ScrollViewer") as ScrollViewer; 
+            } 
+        }
         public int Add(FrameworkElement frameworkElement)
         {
             return ListBox_it.Items.Add(frameworkElement);
         }
+        public double SpeedScroling
+        {
+            get; set;
+
+        } = 0.1;
         public DListBox()
         {
             InitializeComponent();
+
+            
+            Random random = new Random();
+            this.PreviewMouseWheel += (o, e) =>
+            {
+                double HorizontalOffset_ = eScrollViewer.HorizontalOffset - e.Delta * SpeedScroling;
+                Console.WriteLine(HorizontalOffset_);
+                eScrollViewer.ScrollToHorizontalOffset(HorizontalOffset_);
+                
+            };
         }
         public void ResizeItemsHeight()
         {
@@ -39,6 +61,15 @@ namespace UcGIFmaker.Controls
         public FrameworkElement GetItemId( int id )
         {
             return (FrameworkElement)ListBox_it.Items[id];
+        }
+
+        private void UserControl_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            //e.Delta
+            //ListBox_it.ScrollToVerticalOffset(ListBox_it.VerticalOffset - 3)
+            //ListBox_it.sc
+            //Console.WriteLine(e.Delta);
+            //ScrollViewer.ScrollToHorizontalOffset( - e.Delta);
         }
     }
 }
