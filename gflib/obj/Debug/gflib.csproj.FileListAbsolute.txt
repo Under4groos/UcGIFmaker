@@ -1,4 +1,3 @@
-C:\Users\UnderKo\source\repos\UcGIFmaker\gflib\obj\Debug\gflib.csproj.AssemblyReference.cache
 C:\Users\UnderKo\source\repos\UcGIFmaker\gflib\obj\Debug\gflib.csproj.CoreCompileInputs.cache
 C:\Users\UnderKo\source\repos\UcGIFmaker\gflib\bin\Debug\gflib.dll
 C:\Users\UnderKo\source\repos\UcGIFmaker\gflib\bin\Debug\gflib.pdb

@@ -62,6 +62,8 @@
     <Compile Include="lib\cur_pos.cs" />
     <Compile Include="lib\gif_cl_dire.cs" />
     <Compile Include="lib\Keyboard.cs" />
+    <Compile Include="lib\LibControls.cs" />
+    <Compile Include="lib\RGBColor.cs" />
     <Compile Include="lib\SFiles.cs" />
     <Compile Include="lib\SStylus.cs" />
     <Compile Include="lib\StylusApi.cs" />

@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UcGIFmaker.Controls
+namespace UcGIFmaker.Window
 {
     /// <summary>
-    /// Логика взаимодействия для DButton.xaml
+    /// Логика взаимодействия для StartWindow.xaml
     /// </summary>
-    public partial class DButton : UserControl
+    public partial class StartWindow : System.Windows.Window
     {
-        public DButton()
+        public StartWindow()
         {
             InitializeComponent();
         }
-        public string Text
-        {
-            get
-            {
-                return Label_content.Content as string;
-            }
-            set
-            {
-                Label_content.Content = value;
-            }
-        }
-        
     }
 }
